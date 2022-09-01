@@ -4,19 +4,19 @@ load('TireB_testdata.mat');  %试验数据 工作区
 
 s_test1=Sa200;
 
-e= -0.05;          
-f= 2.689;
-g= -0.072;          
-h= 4.361;
+p_d= -0.05;          
+q_d= 2.689;
+r_d= -0.072;          
+w_d= 4.361;
 % % Fy计算
 
-a= -0.06;          
-b= 1.965;
-c= 2.098;
-d= 2.333;
-Fy = 200*(a*s_test1+b+c*(1-2*exp(-s_test1/d)));
-e1 =e*exp(-s_test1/f)-g*exp(-s_test1/h);
-Mz_exp200 =e1.*Fy;
+p= -0.06;          
+q= 1.965;
+r= 2.098;
+w= 2.333;
+Fy = 200*(p*s_test1+q+r*(1-2*exp(-s_test1/w)));
+d1 =p_d*exp(-s_test1/q_d)-r_d*exp(-s_test1/w_d);
+Mz_exp200 =d1.*Fy;
 B= 0.739;               
 C= 0.13;
 D= 0.542;
@@ -24,18 +24,18 @@ E= 1.192;
 Mz_MF200 =200*D*sin(C*atan((B*s_test1-E*(B*s_test1 - atan(B*s_test1)))));
 
 s_test1=Sa600;
-e= 1.126;          
-f= 14.327;
-g= 1.088;          
-h= 14.717;
+p_d= 1.126;          
+q_d= 14.327;
+r_d= 1.088;          
+w_d= 14.717;
 % % Fy计算
-a= -0.077;          
-b= 1.994;
-c= 2.133;
-d= 3.401;
-Fy=600*(a*s_test1+b+c*(1-2*exp(-s_test1/d)));
-e1 =e*exp(-s_test1/f)-g*exp(-s_test1/h);
-Mz_exp600 =e1.*Fy;
+p= -0.077;          
+q= 1.994;
+r= 2.133;
+w= 3.401;
+Fy=600*(p*s_test1+q+r*(1-2*exp(-s_test1/w)));
+d1 =p_d*exp(-s_test1/q_d)-r_d*exp(-s_test1/w_d);
+Mz_exp600 =d1.*Fy;
 B= -0.169;               
 C= 2.512;
 D= -0.122;
@@ -44,18 +44,18 @@ Mz_MF600 =300*D*sin(C*atan((B*s_test1-E*(B*s_test1 - atan(B*s_test1)))));
 
 
 s_test1=Sa1000;
-e= -0.844;          
-f= 2.826;
-g= -0.845;          
-h= 3.19;
+p_d= -0.844;          
+q_d= 2.826;
+r_d= -0.845;          
+w_d= 3.19;
 % % Fy计算
-a= -0.058;          
-b= 1.77;
-c= 1.924;
-d= 3.681;
-Fy=1000*(a*s_test1+b+c*(1-2*exp(-s_test1/d)));
-e1 =e*exp(-s_test1/f)-g*exp(-s_test1/h);
-Mz_exp1000 =e1.*Fy;
+p= -0.058;          
+q= 1.77;
+r= 1.924;
+w= 3.681;
+Fy=1000*(p*s_test1+q+r*(1-2*exp(-s_test1/w)));
+d1 =p_d*exp(-s_test1/q_d)-r_d*exp(-s_test1/w_d);
+Mz_exp1000 =d1.*Fy;
 B= -0.135;               
 C= 2.448;
 D= -0.153;

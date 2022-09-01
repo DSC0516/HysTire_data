@@ -3,11 +3,11 @@ clc;
 load('tireA_testdata.mat');  %试验数据 
 
 s_test1=SR_1200; 
-a= -7.031;          
-b= 1.419;
-c= 1.408;
-d= 0.089;
-Fx_exp_1200 =2000*(a*s_test1+b+c*(1-2*exp(-s_test1/d)));
+p= -7.031;          
+q= 1.419;
+r= 1.408;
+w= 0.089;
+Fx_exp_1200 =2000*(p*s_test1+q+r*(1-2*exp(-s_test1/w)));
 
 B= -6.805;               
 C= 1.684;
@@ -17,11 +17,11 @@ s_MF_1200=s_test1;
 Fx_MF_1200 = 2000*D*sin(C*atan((B*s_MF_1200-E*(B*s_MF_1200 - atan(B*s_MF_1200)))));
 
 s_test1=SR_900;
-a= -6.542;          
-b= 1.352;
-c= 1.364;
-d= 0.071;
-Fx_exp_900 =1500*(a*s_test1+b+c*(1-2*exp(-s_test1/d)));
+p= -6.542;          
+q= 1.352;
+r= 1.364;
+w= 0.071;
+Fx_exp_900 =1500*(p*s_test1+q+r*(1-2*exp(-s_test1/w)));
 
 B= -2.191;               
 C= 7.99;
@@ -31,11 +31,11 @@ s_MF900=SR_900;
 Fx_MF_900 = 1500*D*sin(C*atan((B*s_MF900-E*(B*s_MF900 - atan(B*s_MF900)))));
 
 s_test600=SR_600;
-a= -5.173;          
-b= 1.196;
-c= 1.283;
-d= 0.049;
-Fx_exp_600 =1000*(a*s_test600+b+c*(1-2*exp(-s_test600/d)));
+p= -5.173;          
+q= 1.196;
+r= 1.283;
+w= 0.049;
+Fx_exp_600 =1000*(p*s_test600+q+r*(1-2*exp(-s_test600/w)));
 
 B= -4.41;               
 C= -4.52;

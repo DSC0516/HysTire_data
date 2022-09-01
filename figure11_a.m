@@ -3,19 +3,19 @@ clc;
 
 load('TireB_testdata.mat');  %试验数据 工作区
 s_test1=0:0.01:0.14;
-a= -4.965;          
-b= 1.985;
-c= 2.038;
-d= 0.044;
-u_sim1 =(a*s_test1+b+c*(1-2*exp(-s_test1/d)));
+p= -4.965;          
+q= 1.985;
+r= 2.038;
+w= 0.044;
+u_sim1 =(p*s_test1+q+r*(1-2*exp(-s_test1/w)));
 a_m = 0.14;%最大值横坐标
 a_b = 0.05;%第二段加载初点横坐标
 a_o = 1;%横坐标最大值
-Fa_m= a*a_m+b+c*(1-2*exp(-a_m/d));
-Fa_b= a*a_b+b+c*(1-2*exp(-a_b/d));
+Fa_m= p*a_m+q+r*(1-2*exp(-a_m/w));
+Fa_b= p*a_b+q+r*(1-2*exp(-a_b/w));
 f1 = (a_m-a_b)/(a_o-a_m);
 s_test2=0.14:0.001:1;
-u_sim2 = Fa_m+Fa_b-a*(a_b+f1*(s_test2-a_m))-b-c*(1-2*exp(-(a_b+f1*(s_test2-a_m))/d));
+u_sim2 = Fa_m+Fa_b-p*(a_b+f1*(s_test2-a_m))-q-r*(1-2*exp(-(a_b+f1*(s_test2-a_m))/w));
 Fx_cau1_600=u_sim1*600;
 Fx_cau2_600=u_sim2*600;
 s1_600=s_test1;
@@ -28,19 +28,19 @@ s_MF600=0:0.01:0.3;
 Fx_MF_600 = 600*D*sin(C*atan((B*s_MF600-E*(B*s_MF600 - atan(B*s_MF600)))));
 
 s_test1=0:0.001:0.15; 
-a= -6.269;          
-b= 1.819;
-c= 2.015;
-d= 0.054;
-u_sim1 =a*s_test1+b+c*(1-2*exp(-s_test1/d));
+p= -6.269;          
+q= 1.819;
+r= 2.015;
+w= 0.054;
+u_sim1 =p*s_test1+q+r*(1-2*exp(-s_test1/w));
 a_m = 0.15;%最大值横坐标
 a_b = 0.05;%第二段加载初点横坐标
 a_o = 1;%横坐标最大值
-Fa_m= a*a_m+b+c*(1-2*exp(-a_m/d));
-Fa_b= a*a_b+b+c*(1-2*exp(-a_b/d));
+Fa_m= p*a_m+q+r*(1-2*exp(-a_m/w));
+Fa_b= p*a_b+q+r*(1-2*exp(-a_b/w));
 f1 = (a_m-a_b)/(a_o-a_m);
 s_test2=0.15:0.001:1;
-u_sim2 = Fa_m+Fa_b-a*(a_b+f1*(s_test2-a_m))-b-c*(1-2*exp(-(a_b+f1*(s_test2-a_m))/d));
+u_sim2 = Fa_m+Fa_b-p*(a_b+f1*(s_test2-a_m))-q-r*(1-2*exp(-(a_b+f1*(s_test2-a_m))/w));
 Fx_cau1_900=u_sim1*900;
 Fx_cau2_900=u_sim2*900;
 s1_900=s_test1;
@@ -52,19 +52,19 @@ E= 3.135;
 s_MF900=0:0.01:0.3;
 Fx_MF_900 = 900*D*sin(C*atan((B*s_MF900-E*(B*s_MF900 - atan(B*s_MF900)))));
 s_test1=0:0.01:0.16;
-a= -6.686;          
-b= 1.95;
-c= 1.991;
-d= 0.073;
-u_sim1=a*s_test1+b+c*(1-2*exp(-s_test1/d));
+p= -6.686;          
+q= 1.95;
+r= 1.991;
+w= 0.073;
+u_sim1=p*s_test1+q+r*(1-2*exp(-s_test1/w));
 a_m = 0.16;%最大值横坐标
 a_b = 0.05;%第二段加载初点横坐标
 a_o = 1;%横坐标最大值
-Fa_m= a*a_m+b+c*(1-2*exp(-a_m/d));
-Fa_b= a*a_b+b+c*(1-2*exp(-a_b/d));
+Fa_m= p*a_m+q+r*(1-2*exp(-a_m/w));
+Fa_b= p*a_b+q+r*(1-2*exp(-a_b/w));
 f1 = (a_m-a_b)/(a_o-a_m);
 s_test2=0.16:0.01:1;
-u_sim2 = Fa_m+Fa_b-a*(a_b+f1*(s_test2-a_m))-b-c*(1-2*exp(-(a_b+f1*(s_test2-a_m))/d));
+u_sim2 = Fa_m+Fa_b-p*(a_b+f1*(s_test2-a_m))-q-r*(1-2*exp(-(a_b+f1*(s_test2-a_m))/w));
 Fx_cau1_1200=u_sim1*1200;
 Fx_cau2_1200=u_sim2*1200;
 s1_1200=s_test1;
@@ -120,12 +120,12 @@ text(0.3,2300,'{\it F_z}=1200 N');%文字说明
 print -depsc C:\Users\86152\OneDrive\duan\OneDrive\Lasis\010-轮胎模型\HysTire\figure\newfigure\11_a
 %% MSE 
 
-a= -5.393;          
-b= 2.037;
-c= 2.075;
-d= 0.046;
+p= -5.393;          
+q= 2.037;
+r= 2.075;
+w= 0.046;
 
-Fx_exp_600 =600*(a*SR600+b+c*(1-2*exp(-SR600/d)));
+Fx_exp_600 =600*(p*SR600+q+r*(1-2*exp(-SR600/w)));
 
 B= -7.918;               
 C= -2.594;
@@ -138,13 +138,13 @@ Fx_MF_600 = 600*D*sin(C*atan((B*SR600-E*(B*SR600 - atan(B*SR600)))));
 % b= 1.819;
 % c= 2.015;
 % d= 0.054;
-a= -6.602;          
-b= 1.862;
-c= 2.046;
-d= 0.056;
+p= -6.602;          
+q= 1.862;
+r= 2.046;
+w= 0.056;
 
 
-Fx_exp_900 =900*(a*SR900+b+c*(1-2*exp(-SR900/d)));
+Fx_exp_900 =900*(p*SR900+q+r*(1-2*exp(-SR900/w)));
 
 
 B= 4.79;               
@@ -153,12 +153,12 @@ D= 2.66;
 E= 3.135;
 Fx_MF_900 = 900*D*sin(C*atan((B*SR900-E*(B*SR900 - atan(B*SR900)))));
 
-a= -6.686;          
-b= 1.95;
-c= 1.991;
-d= 0.073;
+p= -6.686;          
+q= 1.95;
+r= 1.991;
+w= 0.073;
 
-Fx_exp_1200=1200*(a*SR1200+b+c*(1-2*exp(-SR1200/d)));
+Fx_exp_1200=1200*(p*SR1200+q+r*(1-2*exp(-SR1200/w)));
 
 
 B= -8.774;               

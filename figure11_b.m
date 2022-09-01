@@ -4,11 +4,11 @@ clc;
 load('TireB_testdata.mat');  %试验数据 工作区
 
 s_test1=Sa200; 
-a= -0.06;          
-b= 1.965;
-c= 2.098;
-d= 2.333;
-Fy_exp200 = -200*(a*s_test1+b+c*(1-2*exp(-s_test1/d)));
+p= -0.06;          
+q= 1.965;
+r= 2.098;
+w= 2.333;
+Fy_exp200 = -200*(p*s_test1+q+r*(1-2*exp(-s_test1/w)));
 
 B= -0.472;               
 C= 0.535;
@@ -17,11 +17,11 @@ E= -1.83;
 Fy_MF200 =-200*D*sin(C*atan((B*s_test1-E*(B*s_test1 - atan(B*s_test1)))));
 
 s_test1=Sa600; 
-a= -0.077;          
-b= 1.994;
-c= 2.133;
-d= 3.401;
-Fy_exp600=-600*(a*s_test1+b+c*(1-2*exp(-s_test1/d)));
+p= -0.077;          
+q= 1.994;
+r= 2.133;
+w= 3.401;
+Fy_exp600=-600*(p*s_test1+q+r*(1-2*exp(-s_test1/w)));
 B= 0.041;               
 C= 6.295;
 D= 3.094;
@@ -29,11 +29,11 @@ E= 7.181;
 Fy_MF600 =-600*D*sin(C*atan((B*s_test1-E*(B*s_test1 - atan(B*s_test1)))));
 
 s_test1=Sa1000; 
-a= -0.058;          
-b= 1.77;
-c= 1.924;
-d= 3.681;
-Fy_exp1000=-1000*(a*s_test1+b+c*(1-2*exp(-s_test1/d)));
+p= -0.058;          
+q= 1.77;
+r= 1.924;
+w= 3.681;
+Fy_exp1000=-1000*(p*s_test1+q+r*(1-2*exp(-s_test1/w)));
 
 B= -0.177;               
 C= 1.27;
